@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   alias: {
     '@': resolve(__dirname, '/')
   },
-  css: ['~/assets/css/main.scss', '~/assets/css/scss/components/_listing-feed.scss'],
+  css: ['~/assets/css/main.scss'],
   devtools: { enabled: true },
   postcss: {
     plugins: {

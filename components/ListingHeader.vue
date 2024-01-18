@@ -37,25 +37,5 @@
   };
   </script>
   
-  <style scoped>
-  .listing-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .listing-title {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  
-  .sorting-options {
-    /* Add styles for sorting options */
-  }
-  
-  /* Add additional styling as needed */
-  </style>
+  <style lag="scss" scoped></style>
   
