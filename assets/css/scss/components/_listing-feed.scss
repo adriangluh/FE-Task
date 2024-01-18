@@ -8,31 +8,30 @@
     width: 100%;
     max-width: 1200px;
     margin: auto;
-  
+    
     @include breakpoint('md') {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-  
+
     @include breakpoint('lg') {
-      grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
-  }
-  
-  .car-item {
+}
+
+.car-item {
     background: $card-background-color;
     border-radius: $border-radius;
     box-shadow: $card-shadow;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-  
+
     .car-image {
-      width: 100%;
-      object-fit: cover;
+        width: 100%;
+        object-fit: cover;
     }
-  
+
     .car-details {
-      margin-top: auto;
+        margin-top: auto;
     }
-  }
-  
+}

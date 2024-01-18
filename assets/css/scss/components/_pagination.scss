@@ -1,1 +1,15 @@
 // Styles for pagination component
+
+.pagination-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    &:hover {
+        background-color: #eaeaea;
+    }
+    &:active {
+        background-color: #ddd;
+        font-weight: bold;
+    }
+}

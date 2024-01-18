@@ -4,12 +4,12 @@
     <div class="listing-header">
       <h1 class="listing-title">Showing {{ listingsCount }} cars</h1>
       <div class="sorting-options">
-        <label for="sortSelect">Sort by:</label>
+        <label for="sortSelect"></label>
         <select id="sortSelect" v-model="sortKey" @change="onSortChange">
-          <option value="priceLowHigh">Price: Low to High</option>
-          <option value="priceHighLow">Price: High to Low</option>
-          <option value="yearNewOld">Year: New to Old</option>
-          <option value="yearOldNew">Year: Old to New</option>
+          <option value="priceLowHigh">Lowest Price</option>
+          <option value="priceHighLow">Highest Price</option>
+          <option value="yearNewOld">Newest</option>
+          <option value="yearOldNew">Oldest</option>
           <!-- Add other sorting options as needed -->
         </select>
       </div>

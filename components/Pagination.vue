@@ -2,15 +2,30 @@
 
 <template>
     <nav aria-label="Pagination" class="flex justify-center items-center space-x-1 my-4">
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        @click="changePage(page)"
+        class="pagination-button bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
+        :class="{'active': page === currentPage}"
+        >
+        {{ page }}
+      </button>
     </nav>
-  </template>
+</template>
   
-  <script setup>
+<script setup>
   const props = defineProps({
-    totalPages: Number
+    totalPages: Number,
+    currentPage: Number
   });
   const emits = defineEmits(['page-changed']);
-  </script>
-  
-  <style lang="scss" scoped></style>
-  
+
+  function changePage(page){
+    // $emit('page-changed', page)
+    console.log(page);
+    emits('page-changed', page);
+  }
+</script>
+
+<style lang="scss"></style>
