@@ -1,7 +1,8 @@
 <template>
     <section class="listing-feed">
         <ListingHeader 
-            :listingsCount="cars.length"
+            :listingsCount="filteredCars.length"
+            @quality-changed="filterQuality"
             @sort-changed="sortCars"
         />
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -34,9 +35,14 @@ export default {
     data() {
         return {
             cars: carsData.data,
+            filteredCars: [],
+            selectedQuality: 'All',
             currentPage: 1,
             itemsPerPage: 10
         };
+    },
+    mounted() {
+        this.filterQuality(this.selectedQuality);
     },
     computed: {
         totalPages() {
@@ -50,6 +56,17 @@ export default {
         }
     },
     methods: {
+        filterQuality(quality) {
+            this.selectedQuality = quality;
+            if(quality === 'All') {
+                this.filteredCars = this.cars;
+            } else {
+                this.filteredCars = this.cars.filter(car => {
+                    return car.quality === quality;
+                });
+            }
+            this.currentPage = 1;
+        },
         sortCars(sortKey) {
             if(sortKey === 'priceLowHigh') {
                 this.cars.sort((a, b) => {

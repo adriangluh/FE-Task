@@ -3,6 +3,19 @@
 <template>
     <div class="listing-header">
       <h1 class="listing-title">Showing {{ listingsCount }} cars</h1>
+      <div class="quality-filter">
+        <label for="qualitySelect">Filter by:</label>
+        <select id="qualitySelect" 
+                v-model="selectedQuality"
+                @change="onQualityChange"
+        >
+            <option value="All">All</option>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+            <option value="Offers">Offers</option>
+        </select>
+      </div>
+
       <div class="sorting-options">
         <label for="sortSelect"></label>
         <select id="sortSelect" v-model="sortKey" @change="onSortChange">
@@ -10,7 +23,6 @@
           <option value="priceHighLow">Highest Price</option>
           <option value="yearNewOld">Newest</option>
           <option value="yearOldNew">Oldest</option>
-          <!-- Add other sorting options as needed -->
         </select>
       </div>
     </div>
@@ -26,12 +38,16 @@
     },
     data() {
       return {
-        sortKey: 'priceLowHigh' // default sorting option
+        sortKey: 'priceLowHigh', // default sorting option
+        selectedQuality: 'All' // default quality option
       };
     },
     methods: {
       onSortChange() {
         this.$emit('sort-changed', this.sortKey);
+      },
+      onQualityChange() {
+        this.$emit('quality-changed', this.selectedQuality);
       }
     }
   };
