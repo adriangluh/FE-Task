@@ -1,11 +1,20 @@
+// Main SCSS file importing all the partials
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+// Variables and mixins should be imported first
+@import '../css/scss/base/variables.scss';
+@import '../css/scss/utilities/breakpoints.scss';
 
-// Main SCSS file importing all the partials
+// Then import component styles that might use those variables and mixins
+@import '../css/scss/components/listing-header.scss';
+@import '../css/scss/components/car-item.scss';
+@import '../css/scss/components/listing-feed.scss';
+
 
 body {
     background-color: #e8e2e2;
-    color: #2e3ff6;
+    color: #7572FF;
 }

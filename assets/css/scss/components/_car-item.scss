@@ -1,1 +1,44 @@
 // Styles specific to the car item component
+
+.car-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .car-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .car-details {
+    padding: 16px;
+  }
+  
+  .car-title {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .car-price {
+    color: #4CAF50;
+    font-size: 1.2em;
+    margin: 8px 0;
+  }
+  
+  .car-meta {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .car-year, .car-mileage {
+    margin-right: 16px;
+  }
