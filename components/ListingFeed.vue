@@ -7,16 +7,16 @@
         />
         <!-- grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <CarItem
+                <div
                     v-for="(car, index) in paginatedCars"
                     :key="car.id"
-                    :car="car"
-                    v-if="!isValuationPosition(index)"
-                />
-                <ValuationCard
-                    v-if="paginatedCars.length >= valuationPosition"
-                    v-show="currentPage === pageForValuationCard"
-                />
+                >
+                    <ValuationCard
+                        v-if="isValuationCardIndex(index)" />
+                    <CarItem 
+                        v-else :car="car"
+                    />
+                </div>
             </div>
         <Pagination 
             :total-pages="totalPages" 
@@ -47,7 +47,7 @@ export default {
             allCars: carsData.data,
             filteredCars: [],
             selectedQuality: 'All',
-            valuationPosition: 5,
+            valuationCardIndex: 4,
         };
     },
     mounted() {
@@ -59,32 +59,23 @@ export default {
         },
         paginatedCars() {
             const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-            return this.filteredCars.slice(startIndex, startIndex + this.itemsPerPage);
-            // const endIndex = startIndex + this.itemsPerPage;
-            // return this.cars.slice(startIndex, endIndex)
+            const endIndex = startIndex + this.itemsPerPage;
+            return this.filteredCars.slice(startIndex, endIndex);
         },
-        pageForValuationCard() {
-            return Math.ceil((this.valuationPosition + 1) / this.itemsPerPage);
-        }
     },
     methods: {
-        filterQuality(quality) {
-            this.selectedQuality = quality;
-            if(quality === 'All') {
-                this.filteredCars = this.allCars;
-            } else {
-                this.filteredCars = this.allCars.filter(car => {
-                    return car.quality === quality;
-                });
-            }
-            this.currentPage = 1;
-        },
         setCurrentPage(page) {
             this.currentPage = page;
         },
-        isValuationPosition(index) {
-            const positionInPage = index % this.itemsPerPage;
-            return positionInPage === this.valuationPosition;
+        filterQuality(quality) {
+            this.selectedQuality = quality;
+            this.filteredCars = quality === 'All' ? this.allCars : this.allCars.filter(car => car.quality === quality);
+            
+            this.currentPage = 1;
+        },
+        isValuationCardIndex(index) {
+            const valuationIndex = index + (this.currentPage - 1) * this.itemsPerPage;
+            return valuationIndex === this.valuationCardIndex;
         },
         sortCars(sortKey) {
             if(sortKey === 'priceLowHigh') {
@@ -106,11 +97,6 @@ export default {
             }
         },
     },
-    // watch: {
-    //         currentPage(newPage) {
-    //             this.paginatedCars = this.filterCarsByPage(newPage);
-    //         }
-    //     },
     }
 </script>
 
