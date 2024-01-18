@@ -14,3 +14,16 @@
     display: flex;
     align-items: center;
 }
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #eaeaea;
+}
+button:active {
+    background-color: #ddd;
+    font-weight: bold;
+}

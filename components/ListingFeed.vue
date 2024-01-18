@@ -22,23 +22,23 @@
 
 <script>
 import CarItem from './CarItem.vue';
-import ListingHeader from './ListingHeader.vue';
 import Pagination from './Pagination.vue';
+import ListingHeader from './ListingHeader.vue';
 import carsData from '../static/cars.json';
 
 export default {
     components: {
         CarItem,
-        ListingHeader,
-        Pagination
+        Pagination,
+        ListingHeader
     },
     data() {
         return {
-            cars: carsData.data,
-            filteredCars: [],
-            selectedQuality: 'All',
             currentPage: 1,
-            itemsPerPage: 10
+            itemsPerPage: 10,
+            allCars: carsData.data,
+            filteredCars: [],
+            selectedQuality: 'All'
         };
     },
     mounted() {
@@ -46,11 +46,11 @@ export default {
     },
     computed: {
         totalPages() {
-            return Math.ceil(this.cars.length / this.itemsPerPage);
+            return Math.ceil(this.filteredCars.length / this.itemsPerPage);
         },
         paginatedCars() {
             const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-            return this.cars.slice(startIndex, startIndex + this.itemsPerPage);
+            return this.filteredCars.slice(startIndex, startIndex + this.itemsPerPage);
             // const endIndex = startIndex + this.itemsPerPage;
             // return this.cars.slice(startIndex, endIndex)
         }
@@ -59,35 +59,40 @@ export default {
         filterQuality(quality) {
             this.selectedQuality = quality;
             if(quality === 'All') {
-                this.filteredCars = this.cars;
+                this.filteredCars = this.allCars;
             } else {
-                this.filteredCars = this.cars.filter(car => {
+                this.filteredCars = this.allCars.filter(car => {
                     return car.quality === quality;
                 });
             }
             this.currentPage = 1;
         },
+        setCurrentPage(page) {
+            this.currentPage = page;
+        },
+        watch: {
+            currentPage(newPage) {
+                this.paginatedCars = this.filterCarsByPage(newPage);
+            }
+        },
         sortCars(sortKey) {
             if(sortKey === 'priceLowHigh') {
-                this.cars.sort((a, b) => {
+                this.allCars.sort((a, b) => {
                     return a.price - b.price;
                 });
             } else if(sortKey === 'priceHighLow') {
-                this.cars.sort((a, b) => {
+                this.allCars.sort((a, b) => {
                     return b.price - a.price;
                 });
             } else if(sortKey === 'yearNewOld') {
-                this.cars.sort((a, b) => {
+                this.allCars.sort((a, b) => {
                     return new Date(b.date_first_registered) - new Date(a.date_first_registered);
                 });
             } else if(sortKey === 'yearOldNew') {
-                this.cars.sort((a, b) => {
+                this.allCars.sort((a, b) => {
                     return new Date(a.date_first_registered) - new Date(b.date_first_registered);
                 });
             }
-        },
-        setCurrentPage(page) {
-            this.currentPage = page;
         },
     },
     }

@@ -4,18 +4,15 @@
     <div class="listing-header">
       <h1 class="listing-title">Showing {{ listingsCount }} cars</h1>
       <div class="quality-filter">
-        <label for="qualitySelect">Filter by:</label>
-        <select id="qualitySelect" 
-                v-model="selectedQuality"
-                @change="onQualityChange"
+        <button
+            v-for="quality in ['All', 'New', 'Used', 'Offers']"
+            :key="quality"
+            :class="{ 'active': selectedQuality === quality }"
+            @click="filterQuality(quality)"
         >
-            <option value="All">All</option>
-            <option value="New">New</option>
-            <option value="Used">Used</option>
-            <option value="Offers">Offers</option>
-        </select>
+          {{ quality }}
+        </button>
       </div>
-
       <div class="sorting-options">
         <label for="sortSelect"></label>
         <select id="sortSelect" v-model="sortKey" @change="onSortChange">
@@ -46,8 +43,9 @@
       onSortChange() {
         this.$emit('sort-changed', this.sortKey);
       },
-      onQualityChange() {
-        this.$emit('quality-changed', this.selectedQuality);
+      filterQuality(quality) {
+        this.selectedQuality = quality;
+        this.$emit('quality-changed', quality);
       }
     }
   };
