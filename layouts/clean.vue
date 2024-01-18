@@ -1,0 +1,1 @@
+<!-- A minimal layout without a site header/footer for special pages -->
