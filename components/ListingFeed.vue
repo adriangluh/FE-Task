@@ -5,11 +5,17 @@
             @quality-changed="filterQuality"
             @sort-changed="sortCars"
         />
+        <!-- grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <CarItem
-                    v-for="car in paginatedCars"
+                    v-for="(car, index) in paginatedCars"
                     :key="car.id"
                     :car="car"
+                    v-if="!isValuationPosition(index)"
+                />
+                <ValuationCard
+                    v-if="paginatedCars.length >= valuationPosition"
+                    v-show="currentPage === pageForValuationCard"
                 />
             </div>
         <Pagination 
@@ -22,6 +28,7 @@
 
 <script>
 import CarItem from './CarItem.vue';
+import ValuationCard from './ValuationCard.vue';
 import Pagination from './Pagination.vue';
 import ListingHeader from './ListingHeader.vue';
 import carsData from '../static/cars.json';
@@ -29,6 +36,7 @@ import carsData from '../static/cars.json';
 export default {
     components: {
         CarItem,
+        ValuationCard,
         Pagination,
         ListingHeader
     },
@@ -38,7 +46,8 @@ export default {
             itemsPerPage: 10,
             allCars: carsData.data,
             filteredCars: [],
-            selectedQuality: 'All'
+            selectedQuality: 'All',
+            valuationPosition: 5,
         };
     },
     mounted() {
@@ -53,6 +62,9 @@ export default {
             return this.filteredCars.slice(startIndex, startIndex + this.itemsPerPage);
             // const endIndex = startIndex + this.itemsPerPage;
             // return this.cars.slice(startIndex, endIndex)
+        },
+        pageForValuationCard() {
+            return Math.ceil((this.valuationPosition + 1) / this.itemsPerPage);
         }
     },
     methods: {
@@ -70,10 +82,9 @@ export default {
         setCurrentPage(page) {
             this.currentPage = page;
         },
-        watch: {
-            currentPage(newPage) {
-                this.paginatedCars = this.filterCarsByPage(newPage);
-            }
+        isValuationPosition(index) {
+            const positionInPage = index % this.itemsPerPage;
+            return positionInPage === this.valuationPosition;
         },
         sortCars(sortKey) {
             if(sortKey === 'priceLowHigh') {
@@ -95,6 +106,11 @@ export default {
             }
         },
     },
+    // watch: {
+    //         currentPage(newPage) {
+    //             this.paginatedCars = this.filterCarsByPage(newPage);
+    //         }
+    //     },
     }
 </script>
 
