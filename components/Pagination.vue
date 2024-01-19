@@ -22,8 +22,6 @@
   const emits = defineEmits(['page-changed']);
 
   function changePage(page){
-    // $emit('page-changed', page)
-    console.log(page);
     emits('page-changed', page);
   }
 </script>

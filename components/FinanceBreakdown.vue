@@ -8,7 +8,6 @@
         </button>
     </div>
     <div v-show="showBreakdown">
-        <!-- Tab Headers -->
         <div class="tab-headers flex border-b border-gray-200 mb-4">
             <h3
             class="finance-tab mr-4 cursor-pointer w-full text-center"

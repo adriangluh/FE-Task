@@ -26,9 +26,6 @@
       selectCar(car) {
         this.$emit('selected', selectedCar);
       },
-      // getYear(dateStr) {
-      //   return dateStr.split('-')[0];
-      // },
       getFormattedYear(dateStr) {
         const date = new Date(dateStr);
         return date.getFullYear();
@@ -50,12 +47,6 @@
         return formatter.format(value);
       },
     },
-    filters: {
-      // currency(value) {
-      //   return `$${parseFloat(value).toFixed(2)}`;
-      // },
-
-    }
   };
   </script>
   

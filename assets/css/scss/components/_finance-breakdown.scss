@@ -9,26 +9,16 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 0.5rem;
-    }
-    // .finance-breakdown {
-    // }
-    
-    // .finance-header {
-    // }
-    
-    // .tab-headers {
-    // }
-    
-    .finance-tab {
+}
+.finance-tab {
     margin-top: 1rem;
-    /* padding-bottom: 0.5rem; */
     margin-bottom: -2px;
-    &.active {
-        font-weight: bold;
-        border-bottom: 2px solid blue; 
-    }
-    }
-    
-    .finance-content {
+&.active {
+    font-weight: bold;
+    border-bottom: 2px solid blue; 
+}
+}
+
+.finance-content {
     padding-top: 1rem;
-    }
+}
