@@ -9,6 +9,7 @@
 @import '../css/scss/utilities/breakpoints.scss';
 
 // Then import component styles that might use those variables and mixins
+@import '../css/scss/components/navbar.scss';
 @import '../css/scss/components/finance-breakdown.scss';
 @import '../css/scss/components/valuation-card.scss';
 @import '../css/scss/components/pagination.scss';

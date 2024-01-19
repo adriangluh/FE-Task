@@ -6,6 +6,4 @@
   </div>
 </template>
 
-<style>
-/* Global styles */
-</style>
+<style></style>
