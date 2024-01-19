@@ -25,6 +25,7 @@
             :current-page="currentPage"
             @page-changed="setCurrentPage" 
         />
+        <FinanceBreakdown />
     </section>
 </template>
 
@@ -32,6 +33,7 @@
 import CarItem from './CarItem.vue';
 import ValuationCard from './ValuationCard.vue';
 import Pagination from './Pagination.vue';
+import FinanceBreakdown from './FinanceBreakdown.vue';
 import ListingHeader from './ListingHeader.vue';
 import carsData from '../static/cars.json';
 
@@ -40,6 +42,7 @@ export default {
         CarItem,
         ValuationCard,
         Pagination,
+        FinanceBreakdown,
         ListingHeader
     },
     data() {
