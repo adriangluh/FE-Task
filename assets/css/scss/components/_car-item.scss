@@ -4,12 +4,12 @@
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.4s;
     cursor: pointer;
   }
   
   .car-item:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.24);
   }
   
   .car-image {
@@ -22,23 +22,28 @@
     padding: 16px;
   }
   
-  .car-title {
+  .car-meta{
     margin: 0;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 500;
   }
   
   .car-price {
     color: #4CAF50;
     font-size: 1.2em;
-    margin: 8px 0;
+    margin: 18px 0;
+    font-weight: 600;
   }
   
-  .car-meta {
-    color: #666;
-    font-size: 0.9em;
+  .car-specs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
   }
-  
-  .car-year, .car-mileage {
+
+  .car-transmission, .car-fuel-type, .car-mileage {
+    font-size: large;
     margin-right: 16px;
+    margin-top: 10px;
   }

@@ -12,7 +12,9 @@
                     :key="car.id"
                 >
                     <ValuationCard
-                        v-if="isValuationCardIndex(index)" />
+                        v-if="isValuationCardIndex(index)"
+                        class="col-span-1"
+                        />
                     <CarItem 
                         v-else :car="car"
                     />

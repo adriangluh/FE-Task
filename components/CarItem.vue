@@ -1,14 +1,12 @@
 <template>
-    <div class="car-item" @click="selectCar(car)">
+    <div class="car-item bg-white shadow rounded-lg overflow-hidden p-6 flex flex-col justify-between h-full" @click="selectCar(car)">
       <img :src="car.media_urls[0].url" :alt="`Image of ${car.model.name}`" class="car-image"/>
       <div class="car-details">
-        <h2 class="car-title">{{ car.make.name }} {{ car.model.name}}</h2>
-        <p class="car-price">{{ formatCurrency(car.price) }}</p>
-        <div class="car-meta">
-          <span class="car-year">Year: {{ getFormattedYear(car.date_first_registered) }}</span>
-          <span class="car-mileage">{{ mileageFormat( car.odometer_value) }}</span>
+        <div class="car-meta">{{ getFormattedYear(car.date_first_registered) }} {{ car.make.name }} {{ car.model.name}}
         </div>
+        <p class="car-price">{{ formatCurrency(car.price) }}</p>
         <div class="car-specs">
+          <span class="car-mileage">{{ mileageFormat( car.odometer_value) }}</span>
           <span class="car-transmission">{{ car.transmission }}</span>
           <span class="car-fuel-type">{{ car.fuel_type }}</span>
         </div>
