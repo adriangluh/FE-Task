@@ -4,23 +4,23 @@
         <p class="find-value-text text-center">Find out the value of your car in just a few minutes.</p>
         <div class="input-wrapper px-5">
             <form @submit.prevent="submitValuation">
-            <input
-                type="text"
-                v-model="vrm"
-                placeholder="Enter VRM"
-                required
-                class="input-field mb-6"
-            />
-            <input
-                type="number"
-                v-model="mileage"
-                placeholder="Enter mileage"
-                required
-                class="input-field mb-7"
-            />
+                <input
+                    type="text"
+                    v-model="vrm"
+                    placeholder="Enter VRM"
+                    required
+                    class="input-field mb-6"
+                />
+                <input
+                    type="number"
+                    v-model="mileage"
+                    placeholder="Enter mileage"
+                    required
+                    class="input-field mb-7"
+                />
             <button type="submit" class="value-my-car-btn w-full rounded-lg">Value my car</button>
-        </form>
-    </div>
+            </form>
+        </div>
     </div>
 </template>
 
