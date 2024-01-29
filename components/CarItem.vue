@@ -14,8 +14,9 @@
       <div class="car-details flex justify-between items-center">
         <div class="car-meta">{{ getFormattedYear(car.date_first_registered) }} {{ car.make.name }} {{ car.model.name}}
         </div>
-        <div class="fav-icon">
-          <IconsFavourite :isFavourite="car.isFavourite" @update:isFavourite="handleFavourite"/>
+        <div class="fav-icon" @click="toggleFavourite">
+          <IconsFavourite v-if="!isFavourite"/>
+          <IconsFavouriteFilled v-else/>
         </div>
       </div>
       <p class="car-price">{{ formatCurrency(car.price) }} /mo (PCP)</p>
@@ -25,7 +26,13 @@
   <script>
   export default {
     components: {
-      IconsFavourite: () => import('./Icons/Favourite.vue')
+      IconsFavourite: () => import('./Icons/Favourite.vue'),
+      IconsFavouriteFilled: () => import('./Icons/FavouriteFilled.vue')
+    },
+    data() {
+      return {
+        isFavourite: false
+      };
     },
     props: {
       car: {
@@ -62,8 +69,8 @@
         });
         return formatter.format(value);
       },
-      handleFavourite(isFavourite) {
-        this.car.isFavourite = isFavourite;
+      toggleFavourite() {
+        this.isFavourite = !this.isFavourite;
       }
     },
   };

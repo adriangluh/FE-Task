@@ -34,13 +34,11 @@
   }
   
   .car-details {
-    // display: flex;
-    // flex-direction: row;
     padding: 10px;
     // margin-top: 10px;
-    // margin: 0;
     font-size: 0.98em;
     font-weight: 400;
+    cursor: pointer;
   }
   
   // .car-meta{
@@ -94,35 +92,17 @@
   }
 
   .car-transmission, .car-fuel-type, .car-mileage, .car-body-type {
-    // font-size: large;
     margin-right: 16px;
     margin-top: 10px;
   }
 
   .fav-icon{
-    // fill: #fff;
-    stroke: #fff;
-    stroke-width: 0.5px;
+    font-size: 1rem;
+    stroke: rgba(252, 248, 248, 0.968);
+    stroke-width: 0.8px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 10; 
-    // color: #3F3A50;
-    color: rgba(210, 210, 210, 0.968);;
-    
-    
-    &:hover {
-        // fill: #7C4DFF;
-        color: #7C4DFF;
-    }
-
-    &.active {
-          background-color: #7C4DFF;
-          color: white;
-    } 
-
+    color: #3F3A50;
   }
   
-  .filled path{
-    fill: #7C4DFF;
-    // background-color: #7C4DFF;
-  }
