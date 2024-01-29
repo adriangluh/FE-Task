@@ -59,7 +59,8 @@
     left:0;
     right: 0;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
+    justify-content:flex-start; // like in the design
     align-items: center;
     // font-size: 0.9rem;
     padding: 5px;
