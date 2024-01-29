@@ -2,8 +2,8 @@
 
 <template>
     <div class="listing-header">
-      <h1 class="listing-title">Showing {{ listingsCount }} cars</h1>
-      <div class="quality-filter">
+      <h1 class="listing-count">Showing {{ listingsCount }} cars</h1>
+      <div class="quality-filter gap-x-1">
         <button
             v-for="quality in ['All', 'New', 'Used', 'Offers']"
             :key="quality"

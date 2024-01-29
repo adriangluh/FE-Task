@@ -1,28 +1,76 @@
 .listing-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 1.1rem;
+    justify-content:space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
-.listing-title {
-    margin: 0;
-    font-size: 1.5em;
-}
-.sorting-options {
-    display: flex;
-    align-items: center;
-}
-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #eaeaea;
-}
-button:active {
-    background-color: #ddd;
+
+.listing-count {
+    margin-right: 1rem;
+    font-size: 1.25em;
     font-weight: bold;
+    color: #333;
+}
+
+.quality-filter {
+    display: flex;
+    margin-right: 32rem; 
+    // margin-right: 40%;
+    color: #95A0B0;
+
+    button {
+            margin-right: 0.2rem; 
+            padding: 0.25rem 1.5rem;
+            border: 1.5px solid #ddd;
+            // background-color: #f8f8f8;
+        cursor: pointer;
+            transition: background-color 0.03s;
+            border-radius: 1.2rem;
+
+        &:last-child {
+            margin-right: 0; 
+        }
+
+        &.active {
+            background-color: #7C4DFF;
+            color: white;
+            border-color: #7C4DFF;
+        }
+
+        &:not(.active):hover {
+            // background-color: #eaeaea;
+            // box-shadow: 1px 3px 6px rgba(0,0,0,0.24);
+            border: 0.1px solid #333;
+            color: #333;
+            // font-weight: 500;
+        }
+    }
+}
+
+.sorting-options {
+    // display: flex;
+    // align-items: right;
+    // position: sticky;
+    // background-color: #A0B0C0;
+    // background-color: #f8f8f8;
+    // border: #333;
+    // border-radius: 0.8rem sold #ddd;
+    // color: #95A0B0;
+    // padding: 0.5rem 2rem 0.5rem 1rem;
+    cursor: pointer;
+    // margin-left: 37rem;
+}
+
+#sortSelect {
+    background-color: #f8f8f8;
+    // border: #333;
+    // border-radius: 2rem sold #ddd;
+    color: #95A0B0;
+    border: 0.1rem #ddd;
+    border-radius: 0.8rem;
+    padding: 0.5rem 0.6rem;
 }
