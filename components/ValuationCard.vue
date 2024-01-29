@@ -18,8 +18,8 @@
                 required
                 class="input-field mb-7"
             />
+            <button type="submit" class="value-my-car-btn w-full rounded-lg">Value my car</button>
         </form>
-        <button type="submit" class="value-my-car-btn w-full rounded-lg">Value my car</button>
     </div>
     </div>
 </template>
