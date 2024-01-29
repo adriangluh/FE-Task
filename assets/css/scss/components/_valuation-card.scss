@@ -1,10 +1,54 @@
-// // Valuation card styles
+// Valuation card styles
+
+.valuation-card{
+    background-color: #F6F7FB;
+}
+
+.valuation-title {
+    color: #3F3A50;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.find-value-text {
+    color: #3F3A50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.1rem;
+}
+
+.input-field {
+    border: 1px solid #FFFFFF;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+        border: 1px solid #7572FF;
+    }
+
+    &::placeholder {
+        color: #B9BFC3;
+        font-size: 0.95rem;
+        font-weight: 300;
+    }
+}
 
 .value-my-car-btn {
     background-color: #7572FF;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    padding: 0.8rem 1.2rem;
     color: white;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 1rem;
     cursor: pointer;
 
     &:hover {
