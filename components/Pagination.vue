@@ -1,29 +1,76 @@
-<!-- Pagination control -->
-
 <template>
-    <nav aria-label="Pagination" class="flex justify-center items-center space-x-1 my-4">
+  <div class="pagination-container">
+    <a href="#" @click.prevent="backToTop" class="back-to-top">Back to top</a>
+    <div class="pagination-controls">
+      <button @click="goToFirstPage">&laquo;</button>
+      <button @click="goToPrevPage">&lt;</button>
+      
       <button
-        v-for="page in totalPages"
-        :key="page"
-        @click="changePage(page)"
-        class="pagination-button bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
-        :class="{'active': page === currentPage}"
-        >
-        {{ page }}
+        v-for="pageNum in pageNumbers"
+        :key="pageNum"
+        :class="{ 'active': pageNum === currentPage }"
+        @click="changePage(pageNum)"
+      >
+        {{ pageNum }}
       </button>
-    </nav>
-</template>
-  
-<script setup>
-  const props = defineProps({
-    totalPages: Number,
-    currentPage: Number
-  });
-  const emits = defineEmits(['page-changed']);
+      
+      <button @click="goToNextPage">&gt;</button>
+      <button @click="goToLastPage">&raquo;</button>
+    </div>
 
-  function changePage(page){
-    emits('page-changed', page);
-  }
+    <div class="sorting-options">
+      <SortingOptions :listingsCount="listingsCount" @sort-changed="onSortChange" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    currentPage: Number,
+    totalPages: Number,
+  },
+  computed: {
+    pageNumbers() {
+      let pages = [];
+      for (let i = 1; i <= this.totalPages; i++) {
+        pages.push(i);
+      }
+      return pages;
+    },
+  },
+  methods: {
+    changePage(pageNum) {
+      this.$emit('page-changed', pageNum);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    goToFirstPage() {
+      this.changePage(1);
+    },
+    goToLastPage() {
+      this.changePage(this.totalPages);
+    },
+    goToNextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.changePage(this.currentPage + 1);
+      }
+    },
+    goToPrevPage() {
+      if (this.currentPage > 1) {
+        this.changePage(this.currentPage - 1);
+      }
+    },
+    backToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  },
+};
 </script>
 
-<style lang="scss"></style>
+<style scoped></style>

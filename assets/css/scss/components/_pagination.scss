@@ -1,15 +1,38 @@
 // Styles for pagination component
 
-.pagination-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem;
+}
+
+.back-to-top {
+    text-decoration: underline;
     cursor: pointer;
-    &:hover {
-        background-color: #eaeaea;
-    }
-    &:active {
-        background-color: #ddd;
-        font-weight: bold;
+    color: #95A0B0;
+}
+
+.pagination-controls {
+    button {
+        padding: 0.2rem 1.5rem;
+        margin: 0 0.25rem;
+        border: 1px solid #ddd;
+        font-size: 1.2rem;
+        color: #95A0B0;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: background-color 0.03s;
+
+        &.active {
+            background-color: #7C4DFF;
+            color: white;
+            border-color: #7C4DFF;
+        }
+
+        &:not(.active):hover {
+            border: 0.1px solid #333;
+            color: #333;
+        }
     }
 }
