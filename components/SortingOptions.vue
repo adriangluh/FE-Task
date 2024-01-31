@@ -22,17 +22,12 @@
         data() {
             return {
                 sortKey: 'priceLowHigh', // default sorting option
-                // selectedQuality: 'All' // default quality option
             };
         },
         methods: {
             onSortChange() {
                 this.$emit('sort-changed', this.sortKey);
             },
-            // filterQuality(quality) {
-            //     this.selectedQuality = quality;
-            //     this.$emit('quality-changed', quality);
-            // }
         }
     };
 </script>

@@ -1,6 +1,5 @@
 <template>
     <div class="car-item ">
-      <!-- bg-white shadow rounded-lg p-6 flex flex-col justify-between h-full" @click="selectCar(car) -->
       <div class="car-image-container">
         <div class="car-quality-overlay">{{ car.quality }}
         </div>
@@ -41,9 +40,6 @@
       }
     },
     methods: {
-      // selectCar(car) {
-      //   this.$emit('selected', selectedCar);
-      // },
       getFormattedYear(dateStr) {
         const date = new Date(dateStr);
         return date.getFullYear();

@@ -2,14 +2,12 @@
 
 .car-item {
     border: 1px solid #eee;
-    // border-radius: 1.1rem 1.1rem !important;
     border-radius: $border-radius;
     box-shadow: $card-shadow;
     overflow: hidden;
     transition: box-shadow 0.4s;
     cursor: pointer;
     height: 100;
-    // width: 24rem;
   }
   
   .car-item:hover {
@@ -20,36 +18,26 @@
     background-size: cover;
     background-position: center;
     height: 18rem;
-    // max-width: 100%;
-    // width: 100%;
     position: relative;
   }
 
   .car-image {
     width: 100%;
     height: 100%;
-    // height: 18rem;
-    // object-fit: cover;
     display: block;
   }
   
   .car-details {
     padding: 10px;
-    // margin-top: 10px;
     font-size: 0.98em;
     font-weight: 400;
     cursor: pointer;
   }
   
-  // .car-meta{
-
-  // }
-  
   .car-price {
     color: black;
     font-size: 1rem;
     margin: 18px 10px;
-    // margin: 1rem;
     font-weight: 600;
   }
   
@@ -62,19 +50,16 @@
     // justify-content: space-around;
     justify-content:flex-start; // like in the design
     align-items: center;
-    // font-size: 0.9rem;
     padding: 5px;
 
     span {
       background-color: #3F3A50;
-      // background-color: rgba(0,0,0,0.5);
       color: #f0f0f0;
       padding: 0.1rem 0.5rem;
       font-size: 0.875rem;
       border: 0.1rem solid #ddd;
       border-radius: 0.8rem;
       margin: 0.2rem;
-      // text-transform: uppercase;
     }
   }
   .car-quality-overlay{
@@ -84,7 +69,6 @@
     margin: 1rem;
     z-index: 10;
     background-color: #3F3A50;
-    // background-color: rgba(0,0,0,0.5);
     color: #f0f0f0;
     padding: 0.2rem 0.8rem;
     font-size: 1rem;
