@@ -2,9 +2,9 @@
 <div class="finance-breakdown bg-white p-4 rounded-lg shadow-lg mt-6 mb-4">
     <div class="finance-header flex justify-between items-center">
         <p v-show="showBreakdown" class=""><strong>Representative example: </strong>Representative example: Borrowing £11,790.00 over 4 years with a representative APR of 7.9 %, an annual interest rate of 4.08 % (Fixed) and a deposit of £500.00, the amount payable would be £273.59 per month, with a total cost of credit of £1,843.32 and a total amount payable of £13,633.32.</p>
-        <button @click="toggleBreakdown" class="flex items-center rounded-xl ">
-            <span>{{ showBreakdown ? 'Hide' : 'Show' }} breakdown</span>
-            <img :src="showBreakdown ? downArrow : upArrow" alt="Toggle" class="ml-2 h-4 w-4" />
+        <button @click="toggleBreakdown" class="breakdown-button flex justify-between items-start rounded-xl ">
+            <span v-if="showBreakdown">Hide breakdown &uarr;</span>
+            <span v-else>Show breakdown &darr;</span>
         </button>
     </div>
     <div v-show="showBreakdown">
@@ -64,8 +64,6 @@
         return {
         currentTab: 'pcp',
         showBreakdown: true,
-        upArrow: 'favicons/up-arrow.svg',
-        downArrow: 'favicons/down-arrow.svg',
         };
     },
     methods: {

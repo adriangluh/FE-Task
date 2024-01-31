@@ -33,6 +33,7 @@ import CarItem from './CarItem.vue';
 import ValuationCard from './ValuationCard.vue';
 import Pagination from './Pagination.vue';
 import FinanceBreakdown from './FinanceBreakdown.vue';
+import SortingOptions from './SortingOptions.vue';
 import ListingHeader from './ListingHeader.vue';
 import carsData from '../static/cars.json';
 
@@ -41,6 +42,7 @@ export default {
         CarItem,
         ValuationCard,
         Pagination,
+        SortingOptions,
         FinanceBreakdown,
         ListingHeader
     },

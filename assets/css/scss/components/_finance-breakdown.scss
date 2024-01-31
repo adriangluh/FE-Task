@@ -4,6 +4,7 @@
     background-color: #F6F7FB;
     border-radius: 1.2rem;
     border: 0.1rem solid #ddd;
+    transition: all 0.5s ease-in-out;
 }
 
 .finance-detail {
@@ -30,5 +31,20 @@
 
     span {
         font-weight: 700;
+    }
+}
+
+.breakdown-button {
+    background: #FFFFFF;
+    color: #95A0B0;
+    border: 0.1rem #ddd;
+    padding: 1.2rem 0.6rem;
+    border-radius: 1rem;
+    align-items:center;
+    margin-bottom: 0.5rem;
+    margin-left: 0.1rem;
+    span {
+        display: inline-block;
+        width: 9rem;
     }
 }
