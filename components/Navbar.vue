@@ -2,9 +2,7 @@
     <nav class="bg-white border-gray-200 border-b p-4 bg-white">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="navbar-logo">
-                <NuxtLink to="/">
-                    <!-- <img src="favicons/logo.svg" alt="CarDealer Logo" class="h-8" /> -->
-                </NuxtLink>
+                <NuxtLink to="/"></NuxtLink>
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
                 <ul class="flex space-x-4">

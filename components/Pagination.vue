@@ -1,26 +1,34 @@
 <template>
   <div class="pagination-container">
-    <a href="#" @click.prevent="backToTop" class="back-to-top">Back to top</a>
-    <div class="pagination-controls">
-      <button @click="goToFirstPage">&laquo;</button>
-      <button @click="goToPrevPage">&lt;</button>
-      
-      <button
-        v-for="pageNum in pageNumbers"
-        :key="pageNum"
-        :class="{ 'active': pageNum === currentPage }"
-        @click="changePage(pageNum)"
-      >
-        {{ pageNum }}
-      </button>
-      
-      <button @click="goToNextPage">&gt;</button>
-      <button @click="goToLastPage">&raquo;</button>
-    </div>
+    <a 
+      href="#"
+      @click.prevent="backToTop" 
+      class="back-to-top">
+      Back to top
+    </a>
+      <div class="pagination-controls">
+        <button @click="goToFirstPage">&laquo;</button>
+        <button @click="goToPrevPage">&lt;</button>
+        
+        <button
+            v-for="pageNum in pageNumbers"
+            :key="pageNum"
+            :class="{ 'active': pageNum === currentPage }"
+            @click="changePage(pageNum)"
+        >
+          {{ pageNum }}
+        </button>
+        
+        <button @click="goToNextPage">&gt;</button>
+        <button @click="goToLastPage">&raquo;</button>
+      </div>
 
-    <div class="sorting-options">
-      <SortingOptions :listingsCount="listingsCount" @sort-changed="onSortChange" />
-    </div>
+      <div class="sorting-options">
+        <SortingOptions 
+            :listingsCount="listingsCount" 
+            @sort-changed="onSortChange"
+        />
+      </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
-// Styles specific to the car item component
-
+//  Car item component
+//  ========================================================================================
 .car-item {
     border: 1px solid #eee;
     border-radius: $border-radius;
@@ -8,61 +8,55 @@
     transition: box-shadow 0.4s;
     cursor: pointer;
     height: 100;
-  }
-  
-  .car-item:hover {
+}
+
+.car-item:hover {
     box-shadow: 1px 3px 6px rgba(0,0,0,0.35);
-  }
-  .car-image-container {
+}
+.car-image-container {
     background-image: url(/assets/img/car-image1-bmw.avif);
     background-size: cover;
     background-position: center;
     height: 18rem;
     position: relative;
-  }
+}
 
-  .car-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  
-  .car-details {
+.car-details {
     padding: 10px;
     font-size: 0.98em;
     font-weight: 400;
     cursor: pointer;
-  }
-  
-  .car-price {
+}
+
+.car-price {
     color: black;
     font-size: 1rem;
     margin: 18px 10px;
     font-weight: 600;
-  }
-  
-  .car-specs-overlay{
+}
+
+.car-specs-overlay {
     position:absolute;
     bottom: 0;
     left:0;
     right: 0;
     display: flex;
     // justify-content: space-around;
-    justify-content:flex-start; // like in the design
+    justify-content:flex-start;
     align-items: center;
     padding: 5px;
 
     span {
-      background-color: #3F3A50;
-      color: #f0f0f0;
-      padding: 0.1rem 0.5rem;
-      font-size: 0.875rem;
-      border: 0.1rem solid #ddd;
-      border-radius: 0.8rem;
-      margin: 0.2rem;
+        background-color: #3F3A50;
+        color: #f0f0f0;
+        padding: 0.1rem 0.5rem;
+        font-size: 0.875rem;
+        border: 0.1rem solid #ddd;
+        border-radius: 0.8rem;
+        margin: 0.2rem;
     }
-  }
-  .car-quality-overlay{
+}
+.car-quality-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -74,14 +68,14 @@
     font-size: 1rem;
     border: 0.1rem solid #ddd;
     border-radius: 0.8rem;
-  }
+}
 
-  .car-transmission, .car-fuel-type, .car-mileage, .car-body-type {
+.car-transmission, .car-fuel-type, .car-mileage, .car-body-type {
     margin-right: 16px;
     margin-top: 10px;
-  }
+}
 
-  .fav-icon{
+.fav-icon {
     font-size: 1rem;
     stroke: rgba(252, 248, 248, 0.968);
     stroke-width: 0.8px;
@@ -89,5 +83,5 @@
     stroke-linejoin: round;
     stroke-miterlimit: 10; 
     color: #3F3A50;
-  }
-  
+}
+

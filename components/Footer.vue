@@ -74,13 +74,7 @@
 
 <script setup></script>
 
-<style lang="scss" scoped>
-.footer-top,
-.footer-bottom {
-    @apply grid gap-8;
-}
-
-</style>
+<style lang="scss" scoped></style>
 
 
 

@@ -1,6 +1,6 @@
-// Valuation card styles
-
-.valuation-card{
+//  Valuation Card component 
+//  ========================================================================================
+.valuation-card {
     background-color: #F6F7FB;
 }
 
@@ -10,11 +10,13 @@
     font-weight: 500;
     margin-bottom: 1rem;
 }
+
 .find-value-text {
     color: #3F3A50;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
+
 .input-wrapper {
     display: flex;
     flex-direction: column;

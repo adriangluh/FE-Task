@@ -1,5 +1,5 @@
-// Styles for finance breakdown component
-
+//  Finance Breakdown component
+//  ========================================================================================
 .finance-breakdown {
     background-color: #F6F7FB;
     border-radius: 1.2rem;
@@ -17,13 +17,15 @@
     align-items: center;
     margin-bottom: 0.5rem;
 }
+
 .finance-tab {
     margin-top: 1rem;
     margin-bottom: -2px;
-&.active {
-    font-weight: bold;
-    border-bottom: 2px solid blue; 
-}
+
+    &.active {
+        font-weight: bold;
+        border-bottom: 2px solid blue; 
+    }
 }
 
 .finance-content {
@@ -43,6 +45,7 @@
     align-items:center;
     margin-bottom: 0.5rem;
     margin-left: 0.1rem;
+
     span {
         display: inline-block;
         width: 9rem;

@@ -1,8 +1,11 @@
 <template>
 <div class="finance-breakdown bg-white p-4 rounded-lg shadow-lg mt-6 mb-4">
     <div class="finance-header flex justify-between items-center">
-        <p v-show="showBreakdown" class=""><strong>Representative example: </strong>Representative example: Borrowing £11,790.00 over 4 years with a representative APR of 7.9 %, an annual interest rate of 4.08 % (Fixed) and a deposit of £500.00, the amount payable would be £273.59 per month, with a total cost of credit of £1,843.32 and a total amount payable of £13,633.32.</p>
-        <button @click="toggleBreakdown" class="breakdown-button flex justify-between items-start rounded-xl ">
+        <p v-show="showBreakdown"><strong>Representative example:</strong>Representative example: Borrowing £11,790.00 over 4 years with a representative APR of 7.9 %, an annual interest rate of 4.08 % (Fixed) and a deposit of £500.00, the amount payable would be £273.59 per month, with a total cost of credit of £1,843.32 and a total amount payable of £13,633.32.</p>
+        <button 
+            @click="toggleBreakdown" 
+            class="breakdown-button flex justify-between items-start rounded-xl "
+        >
             <span v-if="showBreakdown">Hide breakdown &uarr;</span>
             <span v-else>Show breakdown &darr;</span>
         </button>
@@ -10,22 +13,25 @@
     <div v-show="showBreakdown">
         <div class="tab-headers flex border-b border-gray-200 mb-4">
             <h3
-            class="finance-tab mr-4 cursor-pointer w-full text-center"
-            :class="{ 'active': currentTab === 'pcp' }"
-            @click="currentTab = 'pcp'"
+                class="finance-tab mr-4 cursor-pointer w-full text-center"
+                :class="{ 'active': currentTab === 'pcp' }"
+                @click="currentTab = 'pcp'"
             >
             Personal Contract Purchase
             </h3>
             <h3
-            class="finance-tab cursor-pointer w-full text-center"
-            :class="{ 'active': currentTab === 'hp' }"
-            @click="currentTab = 'hp'"
+                class="finance-tab cursor-pointer w-full text-center"
+                :class="{ 'active': currentTab === 'hp' }"
+                @click="currentTab = 'hp'"
             >
             Hire Purchase
             </h3>
         </div>
 
-        <div v-show="currentTab === 'pcp'" class="finance-content">
+        <div 
+            v-show="currentTab === 'pcp'" 
+            class="finance-content"
+        >
             <div class="grid grid-cols-1 md:grid-cols-5 gap-2 p-1">
                 <div class="finance-detail">48 monthly payments: <span>£199.99</span></div>
                 <div class="finance-detail">Cash price: <span>£14,999.99</span></div>
@@ -40,7 +46,10 @@
             </div>
         </div>
 
-        <div v-show="currentTab === 'hp'" class="finance-content">
+        <div 
+            v-show="currentTab === 'hp'" 
+            class="finance-content"
+        >
             <div class="grid grid-cols-1 md:grid-cols-5 gap-2 p-1">
                 <div class="finance-detail">48 monthly payments: <span>£259.99</span></div>
                 <div class="finance-detail">Cash price: <span>£18,999.99</span></div>

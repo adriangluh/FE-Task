@@ -1,15 +1,10 @@
-// Navbar styling
-
-// .navbar {
-// }
-
-// .navbar-logo img {
-// }
-
+//  Navbar component 
+//  ========================================================================================
 .navbar-link {
     text-decoration: none;
     color: #333; 
+    
     &:hover {
         color: #000; 
-}
+    }
 }

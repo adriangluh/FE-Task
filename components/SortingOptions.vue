@@ -1,7 +1,11 @@
 <template>
     <div class="sorting-options">
         <label for="sortSelect"></label>
-        <select id="sortSelect" v-model="sortKey" @change="onSortChange">
+        <select 
+            id="sortSelect" 
+            v-model="sortKey" 
+            @change="onSortChange"
+        >
             <option value="priceLowHigh">Lowest Price</option>
             <option value="priceHighLow">Highest Price</option>
             <option value="yearNewOld">Newest</option>

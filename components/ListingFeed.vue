@@ -13,7 +13,7 @@
                     <ValuationCard
                         v-if="isValuationCardIndex(index)"
                         class="col-span-1"
-                        />
+                    />
                     <CarItem 
                         v-else :car="car"
                     />

@@ -13,7 +13,10 @@
       <div class="car-details flex justify-between items-center">
         <div class="car-meta">{{ getFormattedYear(car.date_first_registered) }} {{ car.make.name }} {{ car.model.name}}
         </div>
-        <div class="fav-icon" @click="toggleFavourite">
+        <div 
+            class="fav-icon" 
+            @click="toggleFavourite"
+        >
           <IconsFavourite v-if="!isFavourite"/>
           <IconsFavouriteFilled v-else/>
         </div>
