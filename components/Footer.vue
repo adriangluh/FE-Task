@@ -1,17 +1,56 @@
 <template>
 <footer class="footer bg-darkBlue text-white p-10">
     <div class="footer-top grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-    <div>
-        <h4 class="footer-heading">CarDealer uk</h4>
-        <address class="not-italic">
-        101 Business Street<br>
-        Business Town<br>
-        Business County<br>
-        BU51 N55
-        </address>
-        <p>Telephone: 01234 567890</p>
-        <p>Email: enquiries@cardealer.uk</p>
-    </div>
+        <h1 class="footer-heading">CarDealer UK</h1>
+        <div class="branch-details">
+            <h2 class="section-title">Branch Details</h2> 
+            <address class="not-italic">
+            101 Business Street<br>
+            Business Town<br>
+            Business County<br>
+            BU51 N55
+            </address>
+            <p>Telephone: 01234 567890</p>
+            <opening-hours>
+                <ul class="week-days">
+                    <li>Weekdays</li>
+                    <li>Saturday</li>
+                    <li>Sunday</li>
+                </ul>
+                <ul class="opening-times">
+                    <li>09:00 - 18:00</li>
+                    <li>10:00 - 17:00</li>
+                    <li>10:00 - 16:00</li>
+                </ul>
+            </opening-hours>
+            <p>Email: enquiries@cardealer.uk</p>
+        </div>
+        <div class="popular-brands">
+            <h2 class="section-title">Popular Brands</h2>
+            <ul>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">BMW</a></li>
+                <li><a href="#">Fiat</a></li>
+                <li><a href="#">Land Rover</a></li>
+                <li><a href="#">Mercedes-Benz</a></li>
+                <li><a href="#">Mini</a></li>
+                <li><a href="#">Peugeot</a></li>
+                <li><a href="#">SEAT</a></li>
+                <li><a href="#">Vauxhall</a></li>
+                <li><a href="#">Volkswagen</a></li>
+            </ul>
+        </div>
+        <div class="site-map">
+            <h2 class="section-title">Site Map</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our cars</a></li>
+                <li><a href="#">Sell your car</a></li>
+                <li><a href="#">Apply for finance</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
     
     <div class="footer-bottom grid grid-cols-1 md:grid-cols-2 gap-8">
