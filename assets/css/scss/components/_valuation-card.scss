@@ -45,15 +45,15 @@
 
 .value-my-car-btn {
     background-color: #7572FF;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
     font-size: 0.95rem;
     margin-top: 0.5rem;
     padding: 0.8rem 1.2rem;
-    color: white;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
 
     &:hover {
-        background-color: #615ffb; 
+        background-color: #615ffb;
     }
 }

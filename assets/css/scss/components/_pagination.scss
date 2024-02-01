@@ -1,33 +1,33 @@
 //  Pagination component 
 //  ========================================================================================
 .pagination-container {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 1.4rem;
 }
 
 .back-to-top {
-    text-decoration: underline;
-    cursor: pointer;
     color: #95A0B0;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .pagination-controls {
     button {
-        padding: 0.2rem 1.5rem;
-        margin: 0 0.25rem;
         border: 1px solid #ddd;
-        font-size: 1.2rem;
-        color: #95A0B0;
         border-radius: 1rem;
+        color: #95A0B0;
         cursor: pointer;
+        font-size: 1.2rem;
+        margin: 0 0.25rem;
+        padding: 0.2rem 1.5rem;
         transition: background-color 0.03s;
 
         &.active {
             background-color: #7C4DFF;
-            color: white;
             border-color: #7C4DFF;
+            color: white;
         }
 
         &:not(.active):hover {

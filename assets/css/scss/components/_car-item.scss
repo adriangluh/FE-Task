@@ -4,10 +4,10 @@
     border: 1px solid #eee;
     border-radius: $border-radius;
     box-shadow: $card-shadow;
-    overflow: hidden;
-    transition: box-shadow 0.4s;
     cursor: pointer;
     height: 100;
+    overflow: hidden;
+    transition: box-shadow 0.4s;
 }
 
 .car-item:hover {
@@ -15,59 +15,58 @@
 }
 .car-image-container {
     background-image: url(/assets/img/car-image1-bmw.avif);
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     height: 18rem;
     position: relative;
 }
 
 .car-details {
-    padding: 10px;
+    cursor: pointer;
     font-size: 0.98em;
     font-weight: 400;
-    cursor: pointer;
+    padding: 10px;
 }
 
 .car-price {
     color: black;
     font-size: 1rem;
-    margin: 18px 10px;
     font-weight: 600;
+    margin: 18px 10px;
 }
 
 .car-specs-overlay {
-    position:absolute;
-    bottom: 0;
-    left:0;
-    right: 0;
-    display: flex;
-    // justify-content: space-around;
-    justify-content:flex-start;
     align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content:flex-start;
+    left:0;
     padding: 5px;
+    position:absolute;
+    right: 0;
 
     span {
         background-color: #3F3A50;
-        color: #f0f0f0;
-        padding: 0.1rem 0.5rem;
-        font-size: 0.875rem;
         border: 0.1rem solid #ddd;
         border-radius: 0.8rem;
+        color: #f0f0f0;
+        font-size: 0.875rem;
         margin: 0.2rem;
+        padding: 0.1rem 0.5rem;
     }
 }
 .car-quality-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 1rem;
-    z-index: 10;
     background-color: #3F3A50;
-    color: #f0f0f0;
-    padding: 0.2rem 0.8rem;
-    font-size: 1rem;
     border: 0.1rem solid #ddd;
     border-radius: 0.8rem;
+    color: #f0f0f0;
+    font-size: 1rem;
+    left: 0;
+    margin: 1rem;
+    padding: 0.2rem 0.8rem;
+    position: absolute;
+    top: 0;
+    z-index: 10;
 }
 
 .car-transmission, .car-fuel-type, .car-mileage, .car-body-type {
@@ -76,12 +75,11 @@
 }
 
 .fav-icon {
+    color: #3F3A50;
     font-size: 1rem;
     stroke: rgba(252, 248, 248, 0.968);
-    stroke-width: 0.8px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-miterlimit: 10; 
-    color: #3F3A50;
+    stroke-miterlimit: 10;
+    stroke-width: 0.8px;
 }
-

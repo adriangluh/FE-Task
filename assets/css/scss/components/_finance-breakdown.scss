@@ -2,29 +2,29 @@
 //  ========================================================================================
 .finance-breakdown {
     background-color: #F6F7FB;
-    border-radius: 1.2rem;
     border: 0.1rem solid #ddd;
+    border-radius: 1.2rem;
     transition: all 0.5s ease-in-out;
 }
 
 .finance-detail {
+    align-items: center;
     background: #FFFFFF;
     border-radius: 1.4rem;
-    padding: 0.8rem;
     display: flex;
-    justify-content:space-between;
     flex-direction: column;
-    align-items: center;
+    justify-content:space-between;
     margin-bottom: 0.5rem;
+    padding: 0.8rem;
 }
 
 .finance-tab {
-    margin-top: 1rem;
     margin-bottom: -2px;
+    margin-top: 1rem;
 
     &.active {
+        border-bottom: 2px solid blue;
         font-weight: bold;
-        border-bottom: 2px solid blue; 
     }
 }
 
@@ -37,14 +37,14 @@
 }
 
 .breakdown-button {
-    background: #FFFFFF;
-    color: #95A0B0;
-    border: 0.1rem #ddd;
-    padding: 1.2rem 0.6rem;
-    border-radius: 1rem;
     align-items:center;
+    background: #FFFFFF;
+    border: 0.1rem #ddd;
+    border-radius: 1rem;
+    color: #95A0B0;
     margin-bottom: 0.5rem;
     margin-left: 0.1rem;
+    padding: 1.2rem 0.6rem;
 
     span {
         display: inline-block;

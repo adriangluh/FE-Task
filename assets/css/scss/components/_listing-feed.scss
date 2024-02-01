@@ -2,10 +2,10 @@
 //  ========================================================================================
 .listing-feed {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    width: 100%;
-    max-width: 1200px;
     margin: auto;
-    
+    max-width: 1200px;
+    width: 100%;
+
     @include breakpoint('md') {
         grid-template-columns: repeat(3, 1fr);
     }
